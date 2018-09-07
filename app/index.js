@@ -1,6 +1,6 @@
 "use strict";
 
-var DURATION_IN_SECONDS = 60 * 60; // 60 minutes
+var DURATION_IN_SECONDS = 60 * 120; // 60 minutes
 var ALARM_SOUND_FILE = 'alarm.mp3';
 
 var $ = global.$ = window.$ = global.jQuery = window.jQuery = require('jquery');
@@ -87,7 +87,7 @@ var updateTimerBar = function(timer, state){
 var updateTimerTime = function(timer, state){
   var valueSeconds = Math.round(timer.value() * DURATION_IN_SECONDS);
   if(valueSeconds != timer.valueSeconds){
-    $timerTime.text(seconds2Date(valueSeconds).toISOString().substr(14, 5));
+    $timerTime.text(seconds2Date(valueSeconds).toISOString().substr(12, 7));
     timer.valueSeconds = valueSeconds;
   }
 }
